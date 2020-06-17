@@ -1,3 +1,8 @@
+/*
+    Program Name : Simple Alarm
+    Author : Soujatya Bhattacharya
+
+*/
 #include<dos.h>
 #include<stdio.h>
 #include<windows.h>
@@ -21,7 +26,7 @@ void timeout()
 	system("cls");
 	while(1)
 	{
-		delay(1000);	
+		delay(1000);
 		if((set_mm == temp_mm) && (set_ss == temp_ss))
 			{
 				break;
@@ -40,7 +45,7 @@ void timeout()
 					{
 						printf("Time = %d : %d",temp_mm,++temp_ss);
 					}
-					
+
 			}
 	}
 }
@@ -69,18 +74,18 @@ void start(int n)
 	timeout();
 	system("color f4");
 	system("cls");
-	printf("Time Up!!! This is the time for Completing your pending job. Good Lock!!\n");	
+	printf("Time Up!!! This is the time for Completing your pending job. Good Lock!!\n");
 	alarm(n);
 	printf("Good Bye\n\n");
 	system("pause");
-	
+
 }
 void off(int n)
 {
 	timeout();
 	system("cls");
 	system("color f4");
-	printf("The Computer needs to rest for few hours!!! \n");	
+	printf("The Computer needs to rest for few hours!!! \n");
 	alarm(n);
 	system("cls");
 	printf("Good Bye User!!\n");
@@ -111,5 +116,5 @@ void main()
 				break;
 		default:
 				printf("Wrong Choose");
-	}	
+	}
 }
