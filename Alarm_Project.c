@@ -8,6 +8,7 @@
 #include<windows.h>
 #include<stdlib.h>
 #include<time.h>
+char agenda[10];
 void delay(unsigned int mseconds)
 {
     clock_t goal = mseconds + clock();
@@ -20,8 +21,17 @@ void timeout()
 	int set_mm,set_ss;
 	int temp_mm,temp_ss;
 	system("color 1e");
+	
+	
 	printf("Enter your time limit (MM SS): ");
 	scanf("%d %d",&set_mm,&set_ss);
+	
+	fflush(stdin);
+	
+	printf("Enter agenda : ");
+	gets(agenda);
+	
+	
 	temp_mm = temp_ss = 0;
 	system("cls");
 	while(1)
@@ -74,7 +84,8 @@ void start(int n)
 	timeout();
 	system("color f4");
 	system("cls");
-	printf("Time Up!!! This is the time for Completing your pending job. Good Lock!!\n");
+	printf("Time Up!!! Now you have to complete your padding task\n");
+	printf("Task : %s",agenda);
 	alarm(n);
 	printf("Good Bye\n\n");
 	system("pause");
