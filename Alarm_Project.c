@@ -7,13 +7,11 @@
 #include<stdio.h>
 #include<windows.h>
 #include<stdlib.h>
+#include <unistd.h>
 #include<time.h>
 char agenda[10];
-void delay(unsigned int mseconds)
-{
-    clock_t goal = mseconds + clock();
-    while (goal > clock());
-}
+
+
 void timeout()
 {
 	system("cls");
@@ -36,7 +34,7 @@ void timeout()
 	system("cls");
 	while(1)
 	{
-		delay(1000);
+		sleep(1);
 		if((set_mm == temp_mm) && (set_ss == temp_ss))
 			{
 				break;
@@ -68,13 +66,13 @@ while(i < n)
 	Beep(100,100);
 	Beep(500,100);
 	Beep(500,100);
-	delay(500);
+	sleep(0.5);
 	Beep(3000,300);
 	Beep(100,300);
 	Beep(100,100);
 	Beep(1000,100);
 	Beep(1000,100);
-	delay(1000);
+	sleep(0.5);
 i++;
 }
 system("cls");
@@ -100,7 +98,7 @@ void off(int n)
 	alarm(n);
 	system("cls");
 	printf("Good Bye User!!\n");
-	delay(2000);
+	sleep(2000);
 	system("shutdown /p");
 }
 void main()
